@@ -39,16 +39,15 @@ const Register = () => {
       });
       navigate("/");
     } catch (e) {
-      const error = new Error(e);
       toast({
         title: "An error occurred.",
-        description: error?.message || "An error occurred. Please try again.",
+        description: e?.message || "An error occurred. Please try again.",
         status: "error",
         duration: 3000,
         isClosable: true,
       });
     }
-    setError(error?.message || "An error occurred");
+    setError(e?.message || "An error occurred");
   };
 
   return (
